@@ -33,7 +33,14 @@ class FirstApp {
             Integer mult = number * numberTwo;
             System.out.println("The total is: " + mult);
         }
-
+        if (choice.equals("divide")) {
+            System.out.println("Give me a number: ");
+            Float number = input.nextFloat();
+            System.out.println("Give me another number: ");
+            Float numberTwo = input.nextFloat();
+            Float div = number / numberTwo;
+            System.out.println("The total is: " + div);
+        }
         input.close();
     }
 }
