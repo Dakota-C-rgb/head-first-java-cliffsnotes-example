@@ -39,16 +39,11 @@ Method - Within a method write the instructions for how the method should be per
 7. System.out.print("asdf")(standard output);(every statement must end in a semicolon)
 8. Close the method with closing curly
 9. Close the class with closing curly. 
-
-  1.     2.      3.     4. 
-public class MyFirstApp {
-                       5.                  6. 
+ 
+public class MyFirstApp { 
     public static void main(String[] args) {
-                 7.     
         System.out.print("Hello World");
-    8.     
     }
-9.     
 }
 
 ------------------------------------------------------
