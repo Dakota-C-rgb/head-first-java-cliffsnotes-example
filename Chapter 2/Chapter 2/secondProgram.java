@@ -12,7 +12,7 @@ class SecondProgram {
     }
 }
 
-class SecondProgramTest {
+class SecondProgramTest extends SecondProgram {
     public static void main(String[] args) {
         SecondProgram d = new SecondProgram();
         Scanner input = new Scanner(System.in);
