@@ -16,7 +16,7 @@ myList.add(s);
 Egg b = new Egg();
 myList.add(b);
 
-// Find out how many things are in it.
+// Find out how many things are i
 int theSize = myList.size();
 
 // Find out if it contains something.
@@ -72,11 +72,122 @@ it stops right there. Similarly with || the expression will be true if either si
 
 In the Java API, classes are grouped into packages. 
 
-Every class in the Java library belongs to a package. The package has a name, like javax.swig. 
+Every class in the Java library belongs to a package. The package has a name, like java.swing
 
 You have to know the full name of the class you want to use in your code. Like ArrayList is not the full
 name of ArrayList. The full name is java.util.ArrayList.
 
+
+## Inheritance
+
+Inheritance is a process of defining a new class based on an existing class by extending its common data members and methods. Inheritance allows us to reuse of code, it improves reusability in your java application.
+
+``` Java
+class Bicycle  
+{ 
+    // the Bicycle class has two fields 
+    public int gear; 
+    public int speed; 
+          
+    // the Bicycle class has one constructor 
+    public Bicycle(int gear, int speed) 
+    { 
+        this.gear = gear; 
+        this.speed = speed; 
+    } 
+          
+    // the Bicycle class has three methods 
+    public void applyBrake(int decrement) 
+    { 
+        speed -= decrement; 
+    } 
+          
+    public void speedUp(int increment) 
+    { 
+        speed += increment; 
+    } 
+      
+    // toString() method to print info of Bicycle 
+    public String toString()  
+    { 
+        return("No of gears are "+gear 
+                +"\n"
+                + "speed of bicycle is "+speed); 
+    }  
+} 
+  
+// derived class 
+class MountainBike extends Bicycle  
+{ 
+      
+    // the MountainBike subclass adds one more field 
+    public int seatHeight; 
+  
+    // the MountainBike subclass has one constructor 
+    public MountainBike(int gear,int speed, 
+                        int startHeight) 
+    { 
+        // invoking base-class(Bicycle) constructor 
+        super(gear, speed); 
+        seatHeight = startHeight; 
+    }  
+          
+    // the MountainBike subclass adds one more method 
+    public void setHeight(int newValue) 
+    { 
+        seatHeight = newValue; 
+    }  
+      
+    // overriding toString() method 
+    // of Bicycle to print more info 
+    @Override
+    public String toString() 
+    { 
+        return (super.toString()+ 
+                "\nseat height is "+seatHeight); 
+    } 
+      
+} 
+  
+// driver class 
+public class Test  
+{ 
+    public static void main(String args[])  
+    { 
+          
+        MountainBike mb = new MountainBike(3, 100, 25); 
+        System.out.println(mb.toString()); 
+              
+    } 
+} 
+```
+
+## Method overriding
+
+The main advantage of method overriding is that the class can give its own specific implementation to a inherited method without even modifying the parent class code.
+
+This is helpful when a class has several child classes, so if a child class needs to use the parent class method, it can use it and the other classes that want to have different implementation can use overriding feature to make changes without touching the parent class code.
+
+``` java
+class Human{
+   //Overridden method
+   public void eat()
+   {
+      System.out.println("Human is eating");
+   }
+}
+class Boy extends Human{
+   //Overriding method
+   public void eat(){
+      System.out.println("Boy is eating");
+   }
+   public static void main( String args[]) {
+      Boy obj = new Boy();
+      //This will call the child class version of eat()
+      obj.eat();
+   }
+}
+```
 
 ## Bullet Points
 - ArrayList is a class in the Java Api.
